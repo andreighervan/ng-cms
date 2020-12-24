@@ -1,33 +1,18 @@
 @import "variables";
 
 @font-face {
-  font-family: ProximaNovaRegular;
-  src: url("/assets/fonts/ProximaNova-Regular.otf");
+  font-family: Monserrat;
+  src: url("/assets/fonts/Montserrat/Montserrat-Regular.ttf");
 }
 
 @font-face {
-  font-family: ProximaNovaBold;
-  src: url("/assets/fonts/ProximaNova-Bold.otf");
+  font-family: MonserratBold;
+  src: url("/assets/fonts/Montserrat/Montserrat-Bold.ttf");
 }
 
 @font-face {
-  font-family: ProximaNovaLight;
-  src: url("/assets/fonts/Proxima-Light.otf");
-}
-
-@font-face {
-  font-family: OpenSansLight;
-  src: url("/assets/fonts/OpenSans-Light.ttf");
-}
-
-@font-face {
-  font-family: OpenSansRegular;
-  src: url("/assets/fonts/OpenSans-Regular.ttf");
-}
-
-@font-face {
-  font-family: OpenSansBold;
-  src: url("/assets/fonts/OpenSans-Bold.ttf");
+  font-family: MonserratLight;
+  src: url("/assets/fonts/Montserrat/Montserrat-Light.ttf");
 }
 
 // Typography
@@ -66,7 +51,7 @@ $h5-font-size: $font-size-base * 1.12 !default; //18px
 $h6-font-size: $font-size-base * 0.875 !default; //14px
 
 $headings-margin-bottom: 0 !default;
-$headings-font-family: ProximaNovaBold !default;
+$headings-font-family: Monserrat !default;
 $headings-font-style: null !default;
 $headings-font-weight: 700 !default;
 $headings-line-height: 1.2 !default;
@@ -77,7 +62,7 @@ $paragraph-margin-bottom: 0 !default;
 $lead-font-size: $font-size-base !default; //16px
 
 p {
-  font-family: OpenSansRegular;
+  font-family: Monserrat;
 }
 
 h6 {
