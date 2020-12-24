@@ -1,0 +1,18 @@
+@import "main.scss";
+
+header {
+    img.ad-image {
+        height: 5.625rem;
+    }
+}
+
+.nav-section {
+    ul.navbar-nav li a {
+        text-transform: uppercase;
+    }
+}
+
+.active-link {
+    background: $orange1;
+    color:white;
+}

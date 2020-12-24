@@ -1,0 +1,44 @@
+<header class="bg-dark py-40">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 text-center text-md-left">
+                <img src="assets/img/logo.png" alt="logo" class="logo-image" />
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+                <img src="assets/img/ad-1.jpg" alt="logo" class="ad-image img-fluid" />
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- nav section-->
+<section class="bg-dark nav-section">
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg py-0 navbar-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/blog" routerLinkActive="active-link">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/about-us" routerLinkActive="active-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/contact-us" routerLinkActive="active-link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>
