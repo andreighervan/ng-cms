@@ -1,1 +1,21 @@
-<p>add-blog-post works!</p>
+<section class="blog-post-form py-20">
+    <div class="container">
+        <form [formGroup]="blogForm" (ngSubmit)="onSubmit(blogForm)">
+            <h4 class="mt-40 font-weight-bold">Add New Blog Post</h4>
+            <div class="row">
+                <div class="col-sm-12 col-md-8">
+                    <mat-form-field class="form-field w-100" appearance="standard">
+                        <mat-label>Title</mat-label>
+                        <input formControlName="title" type="text" matInput>
+                        <mat-error *ngIf="blogForm.controls.title.touched && blogForm.controls.title.invalid">
+                            <span *ngIf="blogForm.controls.title.errors.required">This field is mandatory.</span>
+                        </mat-error>
+                    </mat-form-field>
+                <div [froalaEditor] formControlName="blogContent"></div>
+                   <!--  <input type="file" class="d-block" formControlName="fileUpload"  (change)="uploadFile($event)"> -->
+                    <button class="btn btn-primary my-20" type="submit">Add Blog Post</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

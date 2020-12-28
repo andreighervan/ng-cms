@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 
 import { AngularFireModule } from '@angular/fire';
 
+import { SharedModule } from './shared/shared.module';
+
 import { environment } from 'src/environments/environment';
 
 import { AngularFireAuthModule } from '@angular/fire/auth';
@@ -12,7 +14,6 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-    AngularFireStorageModule
+    AngularFireStorageModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -31,14 +31,19 @@
               "src/styles.scss",
               "src/assets/icons/fontawesome.min.css",
               "src/assets/icons/brands.min.css",
-              "src/assets/icons/solid.min.css"
+              "src/assets/icons/solid.min.css",
+              "./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+              "./node_modules/froala-editor/css/froala_style.min.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "src/styles"
               ]
             },
-            "scripts": []
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/froala-editor/js/froala_editor.pkgd.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -103,7 +108,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+            ]
           }
         },
         "lint": {

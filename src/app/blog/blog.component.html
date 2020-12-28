@@ -1,3 +1,14 @@
-<app-header></app-header>
-
-<app-footer></app-footer>
+<section class="blog-wrapper py-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="row">
+                    <app-blog-item class="col-md-6" *ngFor="let blogItem of blogPosts" [blogItem]="blogItem"></app-blog-item>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <app-sidebar></app-sidebar>
+            </div>
+        </div>
+    </div>
+</section>
