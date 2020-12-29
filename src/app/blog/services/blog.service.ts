@@ -11,7 +11,6 @@ export class BlogService {
   constructor(private db: AngularFirestore) { }
 
   createBlogPost(value) {
-    debugger;
     return this.db.collection('blog').add({
       title: value.title,
       blogContent: value.blogContent
@@ -24,6 +23,14 @@ export class BlogService {
       .pipe(
         map(snaps => this.convertSnaps<Blog>(snaps)),
         first());
+  }
+
+  loadBlogByUrl(id) {
+    return this.db.collection('blog').doc(id)
+  }
+
+  delete(id: string): Promise<void> {
+    return this.db.collection('blog').doc(id).delete();
   }
 
   convertSnaps<T>(snaps) {

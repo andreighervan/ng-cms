@@ -4,15 +4,15 @@ import { CommonModule } from '@angular/common';
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 import { SharedModule } from '../shared/shared.module';
-import { AddBlogPostComponent } from './components/add-blog-post/add-blog-post.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
 import { MatCardModule } from '@angular/material/card';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
-import { BlogItemComponent } from './components/blog-item/blog-item.component';
+import { AddBlogPostComponent } from './components/add-blog-post/add-blog-post.component';
+import { EditBlogPostComponent } from './components/edit-blog-post/edit-blog-post.component';
 
 @NgModule({
-  declarations: [BlogComponent, AddBlogPostComponent, BlogItemComponent],
+  declarations: [BlogComponent, AddBlogPostComponent, EditBlogPostComponent],
   imports: [
     CommonModule,
     BlogRoutingModule,
