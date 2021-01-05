@@ -1,6 +1,7 @@
 <div class="blog-card mb-40 col-md-6" *ngFor="let blogItem of blogPosts">
-
-    <h4 class="font-weight-bold">{{blogItem.title}}</h4>
+    <img [src]="blogItem.fileUploaded" [alt]="blogItem.title" class="img-fluid"/>
+    <a (click)=" goToSinglePost(blogItem)" target="_blank">
+    <h4 class="font-weight-bold">{{blogItem.title}}</h4></a>
     <div class="blog-content">
         <p [innerHTML]="blogItem.blogContent"></p>
     </div>

@@ -1,4 +1,15 @@
 @import "main.scss";
 
-.blog-card{
+.blog-card {
+    a {
+        cursor: pointer;
+    }
+    .blog-content {
+        p {
+            word-wrap: break-word;
+            p {
+                word-wrap: break-word;
+            }
+        }
+    }
 }

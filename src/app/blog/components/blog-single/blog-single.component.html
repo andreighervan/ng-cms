@@ -1,0 +1,14 @@
+<section class="add-post-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 py-40">
+                <img [src]="blog.fileUploaded" [alt]="blog.title" class="img-fluid" />
+                <h3>{{blog.title}}</h3>
+                <p [innerHTML]="blog.blogContent"></p>
+            </div>
+            <div class="col-md-4">
+                <app-sidebar></app-sidebar>
+            </div>
+        </div>
+    </div>
+</section>

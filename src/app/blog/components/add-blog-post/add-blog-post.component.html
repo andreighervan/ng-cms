@@ -12,6 +12,18 @@
                         </mat-error>
                     </mat-form-field>
                     <div [froalaEditor] class="editor py-10" formControlName="blogContent"></div>
+                    <input type="file" class="d-block my-20" (change)="uploadFile($event)">
+                    <div class="upload-progress" *ngIf="(uploadPercent$ | async) as percentage">
+                    
+                        Upload Progress:
+                    
+                        <mat-progress-bar class="progress-bar" mode="determinate" [value]="percentage">
+                    
+                        </mat-progress-bar>
+                    
+                        <span>{{percentage / 100 | percent}}</span>
+                    
+                    </div>
                     <button type="submit" class="btn btn-primary my-20">Add New Post</button>
                 </form>
             </div>

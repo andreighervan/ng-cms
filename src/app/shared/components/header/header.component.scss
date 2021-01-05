@@ -4,17 +4,27 @@ header {
     img.ad-image {
         height: 5.625rem;
     }
+    img.logo-image {
+        height: 50px;
+    }
 }
 
 .nav-section {
-    ul.navbar-nav li a {
-        text-transform: uppercase;
-        font-weight: 500;
-        color:white;
+    height: 45px;
+    ul.navbar-nav li {
+        height: 45px;
+        a {
+            text-transform: uppercase;
+            font-weight: 500;
+            color: white;
+            line-height:45px;
+            padding-top:0;
+            padding-bottom:0;
+        }
     }
 }
 
 .active-link {
     background: $orange1;
-    color:white;
+    color: white;
 }

@@ -2,6 +2,7 @@
     <div class="widget">
         <p class="font-weight-bold text-uppercase mb-20"><i class="fas fa-square mr-5"></i> Recent Posts</p>
         <div *ngFor="let blogItem of blogPosts">
+            <img [src]="blogItem.fileUploaded" [alt]="blogItem.title" class="img-fluid" />
             <p class="font-weight-bold">{{blogItem.title}}</p>
             <div class="blog-content">
                 <p [innerHTML]="blogItem.blogContent"></p>
@@ -19,7 +20,7 @@
         <hr />
     </div>
     <div class="widget text-center">
-        <img src="assets/img/ad-sidebar.jpg"/>
+        <img class="img-fluid" src="assets/img/ad-sidebar.jpg"/>
     </div>
     <hr />
 </aside>

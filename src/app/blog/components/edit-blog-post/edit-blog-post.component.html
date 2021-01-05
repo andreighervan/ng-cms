@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 py-40">
-                <h3>Add New Post</h3>
-                <form [formGroup]="blogForm" (ngSubmit)="onSubmit(blogForm.value)">
+                <h3>Edit Post</h3>
+                <form [formGroup]="blogForm" (ngSubmit)="onSubmit(blogForm.value, blog)">
                     <mat-form-field class="form-field w-100" appearance="standard">
                         <mat-label>Title</mat-label>
                         <input matInput formControlName="title" required>
@@ -12,7 +12,7 @@
                         </mat-error>
                     </mat-form-field>
                     <div [froalaEditor] class="editor py-10" formControlName="blogContent"></div>
-                    <button type="submit" class="btn btn-primary my-20">Add New Post</button>
+                    <button type="submit" class="btn btn-primary my-20">Edit Post</button>
                 </form>
             </div>
             <div class="col-md-4">

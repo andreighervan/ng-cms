@@ -36,6 +36,10 @@ export class BlogItemComponent implements OnInit {
   }
 
   editPost(post) {
+    this.router.navigate(['/blog/edit', post.title]);
+  }
+
+  goToSinglePost(post) {
     this.router.navigate(['/blog', post.title]);
   }
 

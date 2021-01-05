@@ -19,15 +19,15 @@ export class EditBlogPostComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.blog = this.route.snapshot.data["blogUrl"];
+    this.blog = this.route.snapshot.data["blogPost"];
     this.buildBlogForm();
-    this.setFormValues();
+    this.setFormValues(this.blog);
   }
 
-  setFormValues() {
+  setFormValues(blog) {
     this.blogForm.patchValue({
-      title: this.blog.title,
-      blogContent:this.blog.blogContent
+      title: blog.title,
+      blogContent: blog.blogContent
     })
   }
 
@@ -38,8 +38,8 @@ export class EditBlogPostComponent implements OnInit {
     })
   }
 
-  onSubmit(value) {
-   
+  onSubmit(value, blog) {
+    this.blogService.updateBlogPost(blog.id, value).subscribe()
   }
 
 
