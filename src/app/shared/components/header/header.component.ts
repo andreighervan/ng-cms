@@ -1,4 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import firebase from "firebase";
+import { Observable, Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
+
+firebase.initializeApp(environment.firebase);
 
 @Component({
   selector: 'app-header',
@@ -6,10 +13,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+  editorUser: boolean;
+  isLoggedIn$: Observable<boolean>;
+  isLoggedOut$: Observable<boolean>;
 
-  constructor() { }
+  constructor(private afAuth: AngularFireAuth) { }
 
   ngOnInit() {
+
+    this.isLoggedIn$ = this.afAuth.authState.pipe(map(user => !!user));
+    this.isLoggedOut$=this.isLoggedIn$.pipe(map((loggedIn=>!loggedIn)))
+  }
+
+  signOut() {
+    this.afAuth.signOut();
   }
 
 }

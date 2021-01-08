@@ -25,4 +25,19 @@
             }
         }
     }
+    img.img-recent-posts {
+        width: 80px;
+        height: 80px;
+        margin-right: 14px;
+        cursor: pointer;
+    }
+    .media {
+        margin-bottom: 0.875rem;
+        a p {
+            cursor: pointer;
+            &:hover {
+                color: $orange1;
+            }
+        }
+    }
 }

@@ -1,7 +1,7 @@
-<section class="add-post-wrapper">
+<section class="add-post-wrapper py-40">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 py-40">
+            <div class="col-md-8">
                 <h3>Add New Post</h3>
                 <form [formGroup]="blogForm" (ngSubmit)="onSubmit(blogForm.value)">
                     <mat-form-field class="form-field w-100" appearance="standard">
@@ -11,7 +11,15 @@
                             <span *ngIf="blogForm.controls.title.errors.required">This field is mandatory.</span>
                         </mat-error>
                     </mat-form-field>
-                    <div [froalaEditor] class="editor py-10" formControlName="blogContent"></div>
+                    <h5 class="my-10">Blog Content</h5>
+                    <mat-tab-group>
+                        <mat-tab label="HTML Content"> 
+                            <textarea class="editor w-100" [(ngModel)]="blogPostContent" formControlName="blogContent"></textarea>
+                        </mat-tab>
+                        <mat-tab label="Preview">
+                            <div class="editor w-100 my-10" [innerHTML]="blogPostContent"></div>
+                        </mat-tab>
+                    </mat-tab-group>
                     <input type="file" class="d-block my-20" (change)="uploadFile($event)">
                     <div class="upload-progress" *ngIf="(uploadPercent$ | async) as percentage">
                     

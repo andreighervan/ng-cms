@@ -1,15 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SpawnSyncOptionsWithBufferEncoding } from 'child_process';
 import { BehaviorSubject, from, Observable } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
 import { StorageService } from 'src/app/core/services/storage.service';
 import { Blog } from '../../models/blog';
 
 import { BlogService } from '../../services/blog.service';
-
-const MEDIA_STORAGE_PATH = `blog/`;
 
 @Component({
   selector: 'app-add-blog-post',
@@ -19,7 +15,7 @@ const MEDIA_STORAGE_PATH = `blog/`;
 export class AddBlogPostComponent implements OnInit {
   blogForm: FormGroup;
   blog: Blog;
-
+  blogPostContent;
   filePath: any;
   urlImage: string;
   downloadableURL=new BehaviorSubject<string>('');
@@ -60,9 +56,7 @@ export class AddBlogPostComponent implements OnInit {
 
   }
 
-
   onSubmit(value) {
-    console.log(this.filePath);
     debugger;
     this.blogService.createBlogPost(value, this.urlImage)
       .then(

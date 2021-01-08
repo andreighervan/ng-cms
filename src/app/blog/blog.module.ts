@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { BlogRoutingModule } from './blog-routing.module';
 import { BlogComponent } from './blog.component';
 import { SharedModule } from '../shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatFormFieldModule, MatInputModule, MatProgressBarModule } from '@angular/material';
+import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 import { AddBlogPostComponent } from './components/add-blog-post/add-blog-post.component';
@@ -18,9 +19,11 @@ import { BlogSingleComponent } from './components/blog-single/blog-single.compon
     CommonModule,
     BlogRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     SharedModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTabsModule,
     MatProgressBarModule,
     MatCardModule,
     MatButtonModule,

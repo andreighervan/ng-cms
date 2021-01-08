@@ -3,6 +3,9 @@
 .blog-card {
     a {
         cursor: pointer;
+        &:hover {
+            color: $orange1;
+        }
     }
     .blog-content {
         p {
@@ -11,5 +14,11 @@
                 word-wrap: break-word;
             }
         }
+    }
+    img {
+        height: 13.75rem;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
     }
 }

@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class BlogItemComponent implements OnInit {
   @Input() blogPosts: Blog[];
+  editorRole: boolean;
 
   constructor(private db: AngularFirestore, private blogService: BlogService,
   private router: Router) { }
@@ -42,5 +43,9 @@ export class BlogItemComponent implements OnInit {
   goToSinglePost(post) {
     this.router.navigate(['/blog', post.title]);
   }
+
+  truncate(str, no_words) {
+    return str.split(" ").splice(0,no_words).join(" ");
+}
 
 }

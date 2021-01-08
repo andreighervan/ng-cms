@@ -15,7 +15,8 @@ export class BlogService {
     return this.db.collection('blog').add({
       title: value.title,
       blogContent: value.blogContent,
-      fileUploaded: file
+      fileUploaded: file,
+      uploadedDate: Date.now()
     });
   }
 
@@ -34,9 +35,9 @@ export class BlogService {
       .pipe(
         map(snaps => {
 
-          const courses = this.convertSnaps<Blog>(snaps);
+          const blogs = this.convertSnaps<Blog>(snaps);
 
-          return courses.length == 1 ? courses[0] : undefined;
+          return blogs.length == 1 ? blogs[0] : undefined;
         }),
         first()
       )

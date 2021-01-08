@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { Blog } from '../../models/blog';
 import { BlogService } from '../../services/blog.service';
 
@@ -14,14 +16,21 @@ export class EditBlogPostComponent implements OnInit {
   blogForm: FormGroup;
   blog: Blog;
 
+  filePath: any;
+  urlImage: string;
+  downloadableURL = new BehaviorSubject<string>('');
+
   constructor(private fb: FormBuilder,
     private blogService: BlogService,
+    private storage: AngularFireStorage,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.blog = this.route.snapshot.data["blogPost"];
     this.buildBlogForm();
     this.setFormValues(this.blog);
+    this.downloadableURL.next(this.blog.fileUploaded);
+    this.downloadableURL.subscribe(url => this.urlImage = url);
   }
 
   setFormValues(blog) {
@@ -38,7 +47,26 @@ export class EditBlogPostComponent implements OnInit {
     })
   }
 
+  async uploadFile(event) {
+
+    const file: File = event.target.files[0];
+
+    if (file) {
+      this.filePath = `blog/${new Date().getTime()}/${file.name}`;
+      const task = this.storage.upload(this.filePath, file);
+
+      (await task).ref.getDownloadURL().then(url => { this.downloadableURL.next(url); });
+
+    } else {
+      alert('No images selected');
+      this.downloadableURL.next('');
+    }
+
+  }
+
   onSubmit(value, blog) {
+    debugger;
+    value.fileUploaded = this.urlImage;
     this.blogService.updateBlogPost(blog.id, value).subscribe()
   }
 

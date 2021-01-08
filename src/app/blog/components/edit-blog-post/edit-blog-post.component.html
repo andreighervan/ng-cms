@@ -12,6 +12,8 @@
                         </mat-error>
                     </mat-form-field>
                     <div [froalaEditor] class="editor py-10" formControlName="blogContent"></div>
+                    <img [src]="urlImage" style="height:100px;"/>
+                    <input type="file" class="d-block my-20" (change)="uploadFile($event)">
                     <button type="submit" class="btn btn-primary my-20">Edit Post</button>
                 </form>
             </div>

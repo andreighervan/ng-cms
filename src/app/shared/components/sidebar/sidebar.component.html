@@ -1,11 +1,13 @@
-<aside class="py-40 px-20">
+<aside class="pb-10 px-20">
     <div class="widget">
         <p class="font-weight-bold text-uppercase mb-20"><i class="fas fa-square mr-5"></i> Recent Posts</p>
         <div *ngFor="let blogItem of blogPosts">
-            <img [src]="blogItem.fileUploaded" [alt]="blogItem.title" class="img-fluid" />
-            <p class="font-weight-bold">{{blogItem.title}}</p>
-            <div class="blog-content">
-                <p [innerHTML]="blogItem.blogContent"></p>
+            <div class="media">
+                <a (click)=" goToSinglePost(blogItem)" target="_blank"><img class="img-recent-posts" [src]="blogItem.fileUploaded" [alt]="blogItem.title"></a>
+                <div class="media-body">
+                    <a (click)=" goToSinglePost(blogItem)" target="_blank"><p class="font-weight-bold">{{blogItem.title}}</p></a>
+                    <span class="text-lightgray"><i class="fas fa-clock"></i> {{blogItem.uploadedDate | date:'MMMM d, y'}}</span>
+                </div>
             </div>
         </div>
         <hr />
@@ -13,14 +15,15 @@
     <div class="widget">
         <p class="font-weight-bold text-uppercase mb-20"><i class="fas fa-square mr-5"></i> Tag Cloud</p>
         <div class="tags">
-            <a href="#" class="tag">Dog</a><a href="#" class="tag">Dog</a><a href="#" class="tag">Dog
-                Training</a><a href="#" class="tag">Dog Toys</a>
-            <a href="#" class="tag">Dog </a>
+           <a href="https://www.doggesik.com/blog/Brain%20training%20for%20dogs%20%20-%20Develops%20your%20dog's%20natural%20intelligence" class="tag">house training a dog</a><a href="https://www.doggesik.com/blog/Brain%20training%20for%20dogs%20%20-%20Develops%20your%20dog's%20natural%20intelligence" class="tag">dog training</a>
+            <a href="https://www.doggesik.com/blog/Brain%20training%20for%20dogs%20%20-%20Develops%20your%20dog's%20natural%20intelligence" class="tag">brain training for dogs</a>
         </div>
         <hr />
     </div>
     <div class="widget text-center">
-        <img class="img-fluid" src="assets/img/ad-sidebar.jpg"/>
+    <a href="http://YOURCLICKBANKUSERNAME.brainydogs.hop.clickbank.net"><img class="img-fluid"
+            src="https://www.braintraining4dogs.com/wp-content/uploads/2016/02/genius-300x250-a.gif"
+            alt="Genius Dog 300 x 250 - Animated" /></a>
     </div>
     <hr />
 </aside>

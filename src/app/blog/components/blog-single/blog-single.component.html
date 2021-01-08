@@ -1,9 +1,9 @@
-<section class="add-post-wrapper">
+<section class="add-post-wrapper py-40">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 py-40">
+            <div class="col-md-8">
                 <img [src]="blog.fileUploaded" [alt]="blog.title" class="img-fluid" />
-                <h3>{{blog.title}}</h3>
+                <h3 class="py-10">{{blog.title}}</h3>
                 <p [innerHTML]="blog.blogContent"></p>
             </div>
             <div class="col-md-4">
