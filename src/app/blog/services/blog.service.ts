@@ -28,9 +28,9 @@ export class BlogService {
         first());
   }
 
-  loadBlogByUrl(title) {
+  loadBlogByUrl(postUrl) {
     return this.db.collection('blog',
-      ref => ref.where("title", "==", title))
+      ref => ref.where("postUrl", "==", postUrl))
       .snapshotChanges()
       .pipe(
         map(snaps => {

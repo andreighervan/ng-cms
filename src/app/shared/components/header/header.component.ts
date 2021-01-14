@@ -13,7 +13,7 @@ firebase.initializeApp(environment.firebase);
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  editorUser: boolean;
+  editorUser: boolean = false;
   isLoggedIn$: Observable<boolean>;
   isLoggedOut$: Observable<boolean>;
 

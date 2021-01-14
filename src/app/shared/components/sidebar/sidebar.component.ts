@@ -28,7 +28,7 @@ export class SidebarComponent implements OnInit {
 
   goToSinglePost(post) {
     debugger;
-    this.router.navigate(['/blog', post.title]);
+    this.router.navigate(['/blog', post.postUrl]);
   }
 
 }

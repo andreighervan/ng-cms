@@ -3,4 +3,6 @@ export interface Blog {
     title: string;
     blogContent: string;
     fileUploaded: string;
+    shortDescription: string;
+    postUrl: string;
 }

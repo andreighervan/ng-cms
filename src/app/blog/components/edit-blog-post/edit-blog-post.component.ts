@@ -15,9 +15,9 @@ export class EditBlogPostComponent implements OnInit {
 
   blogForm: FormGroup;
   blog: Blog;
-
   filePath: any;
   urlImage: string;
+  blogPostContent;
   downloadableURL = new BehaviorSubject<string>('');
 
   constructor(private fb: FormBuilder,

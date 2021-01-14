@@ -20,6 +20,7 @@
                             <div class="editor w-100 my-10" [innerHTML]="blogPostContent"></div>
                         </mat-tab>
                     </mat-tab-group>
+                     <textarea class="w-100" formControlName="shortDescription"></textarea>
                     <input type="file" class="d-block my-20" (change)="uploadFile($event)">
                     <div class="upload-progress" *ngIf="(uploadPercent$ | async) as percentage">
                     
