@@ -5,11 +5,14 @@ import { SharedModule } from '../shared/shared.module';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { SectionMainHomeComponent } from './components/section-main-home/section-main-home.component';
+import { LatestPostsComponent } from './components/latest-posts/latest-posts.component';
+import { SliderComponent } from './components/slider/slider.component';
+import { NewsletterComponent } from './components/newsletter/newsletter.component';
+import { HomeAboutUsSectionComponent } from './components/home-about-us-section/home-about-us-section.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, SectionMainHomeComponent],
+  declarations: [HomeComponent, LatestPostsComponent, SliderComponent, NewsletterComponent, HomeAboutUsSectionComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

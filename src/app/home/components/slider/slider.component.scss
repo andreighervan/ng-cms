@@ -1,0 +1,18 @@
+@import 'main.scss';
+
+.carousel-home{
+    .carousel-item{
+        height:31.25rem;
+        img{
+            filter: brightness(50%);
+        }
+        .carousel-caption{
+           transform:translateY(-50%);
+           top:50%;
+           left:11%;
+           h2,p{
+               font-weight:bold;
+           }
+        }
+    }
+}
