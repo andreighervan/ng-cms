@@ -4,11 +4,12 @@
             <div class="col-md-8">
                 <img [src]="blog.fileUploaded" [alt]="blog.title" class="img-fluid" />
                 <h3 class="py-10">{{blog.title}}</h3>
-                <p [innerHTML]="blog.blogContent"></p>
+                <p class="blog-content" [innerHTML]="blog.blogContent"></p>
             </div>
             <div class="col-md-4">
                 <app-sidebar></app-sidebar>
             </div>
         </div>
+        <app-newsletter-widget></app-newsletter-widget>
     </div>
 </section>

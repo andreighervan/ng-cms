@@ -1,4 +1,4 @@
-@import "main.scss";
+@import "~src/styles/main.scss";
 
 .add-post-wrapper{
     p{
@@ -9,6 +9,31 @@
         li{
             font-weight:normal;
             font-size:16px;
+        }
+    }
+    p.blog-content{
+        .btn-instant-access{
+            text-align:center;
+            display:block;
+            width:65%;
+            background: $orange1;
+            color:white;
+            font-weight:bold;
+            font-size:2.25rem;
+            text-decoration:none;
+            margin:1.5rem auto;
+            padding:1.5rem;
+            border-radius:4px;
+            &:hover{
+                opacity:.8;
+            }
+            @media (max-width: 61.99em){
+                 font-size: 1.6rem;
+            }
+        }
+        a{
+            font-weight:bold;
+            color:blue;
         }
     }
 }

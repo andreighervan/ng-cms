@@ -12,16 +12,16 @@ import { Router } from '@angular/router';
 })
 export class BlogItemComponent implements OnInit {
   @Input() blogPosts: Blog[];
-  editorRole: boolean = false;
+  editorRole: boolean = true;
 
   constructor(private db: AngularFirestore, private blogService: BlogService,
-  private router: Router) { }
+    private router: Router) { }
 
   ngOnInit() {
   }
 
   deletePost(post): void {
-    if (confirm(`Delete ${post.title}?`)){
+    if (confirm(`Delete ${post.title}?`)) {
       this.blogService.delete(post.id)
         .then(() => {
           this.loadBlogPosts();
@@ -36,8 +36,8 @@ export class BlogItemComponent implements OnInit {
       ).subscribe(posts => this.blogPosts = posts);
   }
 
-  editPost(post) {
-    this.router.navigate(['/blog/edit', post.title]);
+  editPost(post: Blog) {
+    this.router.navigate(['/blog/edit', post.postUrl]);
   }
 
   goToSinglePost(post) {
@@ -45,7 +45,7 @@ export class BlogItemComponent implements OnInit {
   }
 
   truncate(str, no_words) {
-    return str.split(" ").splice(0,no_words).join(" ");
-}
+    return str.split(" ").splice(0, no_words).join(" ");
+  }
 
 }

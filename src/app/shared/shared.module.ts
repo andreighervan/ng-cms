@@ -7,14 +7,21 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BlogItemComponent } from './components/blog-item/blog-item.component';
+import { NewsletterWidgetComponent } from './components/newsletter-widget/newsletter-widget.component';
+import { MatButtonModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, SidebarComponent, BlogItemComponent],
+  declarations: [HeaderComponent, FooterComponent, SidebarComponent, BlogItemComponent, NewsletterWidgetComponent],
   imports: [
     CommonModule,
-    RouterModule 
+    RouterModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
   ],
-  exports: [HeaderComponent, FooterComponent, SidebarComponent, BlogItemComponent]
+  exports: [HeaderComponent, FooterComponent, SidebarComponent, BlogItemComponent, NewsletterWidgetComponent]
 })
 export class SharedModule { }
