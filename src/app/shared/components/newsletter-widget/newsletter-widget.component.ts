@@ -1,5 +1,6 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CoreService } from 'src/app/core/services/core.service';
 
 @Component({
   selector: 'app-newsletter-widget',
@@ -11,11 +12,19 @@ export class NewsletterWidgetComponent implements OnInit {
   @Input() color: string = '';
   newsletterForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+    private coreService: CoreService) { }
 
   ngOnInit() {
     this.buildNewsletterForm();
-    console.log(this.color);
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes) {
+      if (changes.color.currentValue) {
+        this.color = changes.color.currentValue;
+      }
+    }
   }
 
   buildNewsletterForm() {
@@ -29,6 +38,11 @@ export class NewsletterWidgetComponent implements OnInit {
     if (!this.newsletterForm.valid) {
       return;
     }
-    console.log(this.newsletterForm.value);
+    this.coreService.saveSubscriber(this.newsletterForm.value)
+      .then(
+        res => {
+          this.newsletterForm.reset();
+        }
+      )
   }
 }

@@ -1,4 +1,5 @@
-<form [formGroup]="newsletterForm" (submit)="submit()" class="newsletter-form" [class.theme-white]="color==='white'">
+<form [formGroup]="newsletterForm" (submit)="submit()" class="newsletter-form" [class.theme-white]="color==='white'"
+    [class.theme-blue]="color==='blue'">
     <mat-form-field class="form-field" appearance="standard">
         <mat-label> Your Name*</mat-label>
         <input matInput formControlName="name">
