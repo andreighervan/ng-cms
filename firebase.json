@@ -7,7 +7,7 @@
     "rules": "storage.rules"
   },
   "hosting": {
-    "public": "dist/gesiklo",
+    "public": "dist/browser",
     "ignore": [
       "firebase.json",
       "**/.*",

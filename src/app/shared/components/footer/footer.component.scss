@@ -1,6 +1,8 @@
-@import "main.scss";
+@import "~src/styles/main.scss";
 
 footer {
+    background: #298080;
+    position:relative;
     color: white;
     p {
         text-transform: uppercase;
@@ -13,8 +15,8 @@ footer {
         a.tag {
             display: inline-block;
             text-decoration: none;
-            color: $gray5;
-            background-color: $gray9;
+            color: $black;
+            background-color: white;
             margin: 0 0.25rem 0.5rem 0;
             padding: 0.125rem 0.875rem;
             border-radius: 4px;
@@ -33,7 +35,7 @@ footer {
             display: inline-block;
             margin-right: 15px;
             a {
-                color: $gray5;
+                color: white;
                 &:hover {
                     color: $orange1;
                 }
@@ -45,6 +47,17 @@ footer {
     }
     .copyright {
         text-align: center;
-        color: $gray5;
+        background: #298080;
+    }
+    .allow-cookies{
+        z-index:100;
+        overflow: hidden;
+        position: fixed;
+        bottom: 0;
+        top: auto;
+        left: 0;
+        width: 100%;
+        background: #003473;
+
     }
 }

@@ -9,10 +9,11 @@ import { LatestPostsComponent } from './components/latest-posts/latest-posts.com
 import { SliderComponent } from './components/slider/slider.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { HomeAboutUsSectionComponent } from './components/home-about-us-section/home-about-us-section.component';
+import { CookiesComponent } from './components/cookies/cookies.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, LatestPostsComponent, SliderComponent, NewsletterComponent, HomeAboutUsSectionComponent],
+  declarations: [HomeComponent, LatestPostsComponent, SliderComponent, NewsletterComponent, HomeAboutUsSectionComponent, CookiesComponent],
   imports: [
     CommonModule,
     HomeRoutingModule,

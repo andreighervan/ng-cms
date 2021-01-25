@@ -1,5 +1,5 @@
 <form [formGroup]="newsletterForm" (submit)="submit()" class="newsletter-form" [class.theme-white]="color==='white'"
-    [class.theme-blue]="color==='blue'">
+    [class.theme-blue]="color==='blue'" [class.theme-blue-2]="color==='blue-2'">
     <mat-form-field class="form-field" appearance="standard">
         <mat-label> Your Name*</mat-label>
         <input matInput formControlName="name">
@@ -16,5 +16,5 @@
             <span *ngIf="newsletterForm.controls.email.errors.pattern">This field is invalid.</span>
         </mat-error>
     </mat-form-field>
-    <button class="btn btn-primary text-uppercase mt-10" type="submit">Contact Us</button>
+    <button class="btn btn-primary text-uppercase mt-10" type="submit">GET FREE EBOOK</button>
 </form>

@@ -1,6 +1,9 @@
-@import "main.scss";
+@import "~src/styles/main.scss";
 
 .blog-card {
+    h4{
+        color:#298080;
+    }
     a {
         cursor: pointer;
         &:hover {
@@ -10,6 +13,7 @@
     .blog-content {
         p {
             word-wrap: break-word;
+            text-align: justify;
             p {
                 word-wrap: break-word;
             }

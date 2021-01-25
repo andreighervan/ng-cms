@@ -10,7 +10,7 @@ import { Blog } from '../../models/blog';
 })
 export class BlogSingleComponent implements OnInit {
   blog: Blog;
-
+  color = 'blue-2';
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {

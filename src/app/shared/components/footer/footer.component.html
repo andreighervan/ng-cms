@@ -1,14 +1,14 @@
 <footer>
-    <div class="bg-dark4 py-40">
+    <div class="py-30">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <p class="font-weight-bold mb-30"><i class="fas fa-square mr-5"></i> Newsletter</p>
-                    <h6>For our news update subscribe to our newsletter. You can unsubscribe anytime.</h6>
+                    <p class="font-weight-bold mb-20"><i class="fas fa-square mr-5"></i> Get Free Ebook</p>
+                    <h6 class="text-white">Fill out the form to get free ebook about a dog game and other gifts</h6>
                     <app-newsletter-widget [color]="colorForm"></app-newsletter-widget>
                 </div>
                 <div class="col-md-4">
-                    <p class="font-weight-bold mb-30"><i class="fas fa-square mr-5"></i> Tag Cloud</p>
+                    <p class="font-weight-bold mb-20"><i class="fas fa-square mr-5"></i> Tag Cloud</p>
                     <div class="tags">
                         <a href="https://www.doggesik.com/blog/Brain%20training%20for%20dogs%20%20-%20Develops%20your%20dog's%20natural%20intelligence"
                             class="tag">house training a dog</a><a
@@ -19,7 +19,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <p class="font-weight-bold mb-30"><i class="fas fa-square mr-5"></i> Follow Us</p>
+                    <p class="font-weight-bold mb-20"><i class="fas fa-square mr-5"></i> Follow Us</p>
                     <ul class="social-links">
                         <li><a href="https://www.facebook.com/Doggesik-101541245054510" target="_blank"><i
                                     class="fab fa-facebook-f"></i></a></li>
@@ -34,7 +34,13 @@
             </div>
         </div>
     </div>
-    <div class="copyright pb-10 bg-dark4">
-        <h6>© 2021 Doggesik. All right Reserved</h6>
+    <div class="copyright pb-10">
+        <h6 class="text-white">© 2021 Doggesik. All right Reserved</h6>
+    </div>
+    <div class="allow-cookies py-10" *ngIf="showCookieSection" id="cookie">
+        <p class="text-normal text-center">This site uses cookies to provide a great user experience <button
+                type="button" class="btn btn-light" (click)="allowCookie()">Allow
+                cookies</button>
+            Find out more about <a routerLink="/home/cookies" class="text-orange">how we use cookies</a>.</p>
     </div>
 </footer>

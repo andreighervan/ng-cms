@@ -4,6 +4,7 @@ import { Blog } from '../../../blog/models/blog';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { BlogService } from 'src/app/blog/services/blog.service';
 import { Router } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-blog-item',
@@ -12,10 +13,11 @@ import { Router } from '@angular/router';
 })
 export class BlogItemComponent implements OnInit {
   @Input() blogPosts: Blog[];
-  editorRole: boolean = true;
+  editorRole: boolean = false;
 
   constructor(private db: AngularFirestore, private blogService: BlogService,
-    private router: Router) { }
+    private router: Router,
+    private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
   }
@@ -29,6 +31,7 @@ export class BlogItemComponent implements OnInit {
         .catch(err => console.log(err));
     }
   }
+
 
   loadBlogPosts() {
     this.blogService.loadAllPosts()

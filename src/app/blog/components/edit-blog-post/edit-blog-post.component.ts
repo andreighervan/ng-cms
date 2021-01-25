@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireStorage } from '@angular/fire/storage';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { Blog } from '../../models/blog';
@@ -23,7 +24,8 @@ export class EditBlogPostComponent implements OnInit {
   constructor(private fb: FormBuilder,
     private blogService: BlogService,
     private storage: AngularFireStorage,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     this.blog = this.route.snapshot.data["blogPost"];
@@ -65,7 +67,6 @@ export class EditBlogPostComponent implements OnInit {
   }
 
   onSubmit(value, blog) {
-    debugger;
     value.fileUploaded = this.urlImage;
     this.blogService.updateBlogPost(blog.id, value).subscribe()
   }

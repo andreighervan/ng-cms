@@ -1,9 +1,18 @@
 @import "~src/styles/main.scss";
 
 .add-post-wrapper{
+    h3{
+        color:#298080;
+    }
     p{
         word-wrap: break-word;
         margin:0;
+    }
+    img{
+        text-align: center;
+    }
+    h2,h3{
+        margin:1.5rem 0;
     }
     ul.list-dog-behaviours{
         li{
@@ -12,6 +21,7 @@
         }
     }
     p.blog-content{
+        text-align: justify;
         .btn-instant-access{
             text-align:center;
             display:block;
@@ -33,7 +43,7 @@
         }
         a{
             font-weight:bold;
-            color:blue;
+            text-decoration: underline;
         }
         .summary{
             margin:1.875rem 0;
